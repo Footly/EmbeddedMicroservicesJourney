@@ -1,0 +1,13 @@
+{
+    "name": "EmbeddedMicroservicesJourney",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations" : {
+        "vscode": {
+            "extensions": [
+                "mhutchie.git-graph"
+            ]
+        }
+    }
+}

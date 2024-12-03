@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "name": "EmbeddedMicroservicesJourney",
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "codearchitect.pathModels": "/workspaces/EmbeddedMicroservicesJourney/docs/aspice/schemas",
+        "codearchitect.pathProjects": "/workspaces/EmbeddedMicroservicesJourney/docs/aspice"
+    }
+}

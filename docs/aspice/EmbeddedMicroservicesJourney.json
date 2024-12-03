@@ -71,5 +71,26 @@
       "description": "Led shall be controllable through the bus interface (brightness, color, on/off).",
       "icon": "book"
     }
+  ],
+  "SWE6-QualificationTests": [
+    {
+      "id": "6bc07cf4-3157-4410-b720-89f78f4124ac",
+      "label": "QTEST-0",
+      "tags": [
+        "qualificationtest"
+      ],
+      "description": "Steps:\nSend a command to turn the led red and 50% brightness via the bus protocol. \n\nExpected:\nCheck led is set correctly via the led status sent from the bus interface",
+      "requirements": [
+        "${id:aeef05d5-190f-433d-a544-76eb26f97e97}",
+        "${id:07c98e21-66c7-433f-9cd9-8786a7ddbca8}",
+        "${id:f860eeea-01a9-4b4c-8425-83d21c6a3d78}",
+        "${id:bfaf6129-b622-41ab-a4e3-02f4c1710438}",
+        "${id:0ca7d7f7-a008-4f4e-acce-fe969134144e}",
+        "${id:5e540e2b-db6f-4553-ac51-e39a4db28dbd}",
+        "${id:3807e5e2-9e57-48fe-bf81-960c4e5a656b}"
+      ],
+      "icon": "book"
+    },
+    {}
   ]
 }

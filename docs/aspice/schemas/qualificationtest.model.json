@@ -48,7 +48,7 @@
         "icon": {
             "hidden": true,
             "type": "string",
-            "const": "book"
+            "const": "robot"
         }
     },
     "view": []

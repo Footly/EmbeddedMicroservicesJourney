@@ -14,7 +14,61 @@
       "tags": [
         "reqs"
       ],
-      "description": "",
+      "description": "Software shall be able to turn on and off a led ",
+      "icon": "book"
+    },
+    {
+      "id": "07c98e21-66c7-433f-9cd9-8786a7ddbca8",
+      "label": "REQ-1",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Software shall be able to communicate through a bus interface.",
+      "icon": "book"
+    },
+    {
+      "id": "5e540e2b-db6f-4553-ac51-e39a4db28dbd",
+      "label": "REQ-2",
+      "tags": [
+        "reqs"
+      ],
+      "description": "A bus communication protocol shall be defined in order to exchange data.",
+      "icon": "book"
+    },
+    {
+      "id": "f860eeea-01a9-4b4c-8425-83d21c6a3d78",
+      "label": "REQ-3",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Brightness of the led shall be adjustable",
+      "icon": "book"
+    },
+    {
+      "id": "bfaf6129-b622-41ab-a4e3-02f4c1710438",
+      "label": "REQ-4",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Led color shall be selectable. Each component of the RGB is 8bits.",
+      "icon": "book"
+    },
+    {
+      "id": "3807e5e2-9e57-48fe-bf81-960c4e5a656b",
+      "label": "REQ-5",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Led status shall be sent via the bus interface",
+      "icon": "book"
+    },
+    {
+      "id": "0ca7d7f7-a008-4f4e-acce-fe969134144e",
+      "label": "REQ-6",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Led shall be controllable through the bus interface (brightness, color, on/off).",
       "icon": "book"
     }
   ]

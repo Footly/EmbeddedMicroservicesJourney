@@ -10,6 +10,8 @@ RUN apt-get update \
 RUN wget https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz \
     && tar -xf arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz \
     && rm arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi.tar.xz
+    
+COPY codearchitect-0.0.3.vsix /tmp/codearchitect-0.0.3.vsix
 
 #Add arm-none-eabi tools to path
 ENV PATH="$PATH:/home/dev/arm-gnu-toolchain-13.2.Rel1-x86_64-arm-none-eabi/bin"

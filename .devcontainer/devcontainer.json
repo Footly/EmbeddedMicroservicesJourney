@@ -6,7 +6,8 @@
     "customizations" : {
         "vscode": {
             "extensions": [
-                "mhutchie.git-graph"
+                "mhutchie.git-graph",
+                "/tmp/codearchitect-0.0.3.vsix"
             ]
         }
     }

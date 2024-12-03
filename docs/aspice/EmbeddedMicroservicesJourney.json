@@ -1,0 +1,21 @@
+{
+  "id": "7ca2500c-0850-47cb-8acc-c13af5d75c11",
+  "label": "EmbeddedMicroservicesJourney",
+  "tags": [
+    "project"
+  ],
+  "icon": "symbol-method",
+  "$model": "aspice_profile.model.json",
+  "description": "",
+  "SWE1-Requirements": [
+    {
+      "id": "aeef05d5-190f-433d-a544-76eb26f97e97",
+      "label": "REQ-0",
+      "tags": [
+        "reqs"
+      ],
+      "description": "",
+      "icon": "book"
+    }
+  ]
+}

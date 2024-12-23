@@ -1,0 +1,81 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Software Unit",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "swunit"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "squirrel"
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "component": {
+            "type": "string",
+            "hidden": true,
+            "editable": true,
+            "search": {
+                "query": [
+                    [
+                        {
+                            "field": "tags",
+                            "regex": "component"
+                        }
+                    ]
+                ]
+            }
+        },
+        "dependencies": {
+            "type": "array",
+            "items": {
+                "$ref": "./softwareunitdependency.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        },
+        "macros": {
+            "type": "array",
+            "items": {
+                "$ref": "./macro.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        }
+    }
+}

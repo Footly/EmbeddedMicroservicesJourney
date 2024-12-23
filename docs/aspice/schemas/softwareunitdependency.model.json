@@ -1,0 +1,52 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Software Unit Dependency",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "swunitdependency"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "color-mode"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "public",
+                "private"
+            ]
+        },
+        "dependency": {
+            "type": "string",
+            "hidden": true,
+            "editable": true,
+            "search": {
+                "query": [
+                    [
+                        {
+                            "field": "tags",
+                            "regex": "swunit"
+                        }
+                    ]
+                ]
+            }
+        }
+    }
+}

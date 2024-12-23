@@ -1,0 +1,44 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Macros",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "macro"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "text-size"
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "isConfigurable": {
+            "type": "boolean"
+        },
+        "implementation": {
+            "hidden": true,
+            "editable": true,
+            "type": "string"
+        }
+    }
+}

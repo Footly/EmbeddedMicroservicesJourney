@@ -1,0 +1,36 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Interface",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "interface"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "symbol-interface"
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {
     "$schema": "./codearchitect.schema.json",
     "type": "object",
-    "title": "Qualification Test",
+    "title": "Integration Test",
     "properties": {
         "id": {
             "type": "string",
@@ -18,7 +18,7 @@
                 "type": "string"
             },
             "const": [
-                "qualificationtest"
+                "integrationtest"
             ]
         },
         "precondition": {
@@ -47,12 +47,14 @@
         },
         "status": {
             "type": "string",
+            "hidden": true,
+            "editable": true,
             "enum": [
-                "passed",
-                "failed"
+                "✅ passed ༼ つ ◕_◕ ༽つ",
+                "❌ failed (⊙_⊙;)"
             ]
         },
-        "requirements": {
+        "components": {
             "type": "array",
             "hidden": true,
             "editable": true,
@@ -63,7 +65,7 @@
                         [
                             {
                                 "field": "tags",
-                                "regex": "reqs"
+                                "regex": "component"
                             }
                         ]
                     ]
@@ -73,7 +75,7 @@
         "icon": {
             "hidden": true,
             "type": "string",
-            "const": "robot"
+            "const": "extensions-view-icon"
         }
     }
 }

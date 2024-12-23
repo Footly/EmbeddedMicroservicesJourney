@@ -6,7 +6,7 @@
   ],
   "icon": "symbol-method",
   "$model": "aspice_profile.model.json",
-  "description": "",
+  "description": "This repository is dedicated to exploring the implementation of microservices in embedded systems. It covers best practices, design patterns, and practical examples to help developers build scalable and efficient microservices for embedded devices.",
   "SWE1-Requirements": [
     {
       "id": "aeef05d5-190f-433d-a544-76eb26f97e97",

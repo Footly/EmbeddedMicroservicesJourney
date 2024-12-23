@@ -1,0 +1,60 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Struct/Union DataMember",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "structunionmember"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "symbol-field"
+        },
+        "type": {
+            "hidden": true,
+            "editable": true,
+            "type": "string",
+            "search": {
+                "query": [
+                    [
+                        {
+                            "field": "tags",
+                            "regex": "type"
+                        }
+                    ]
+                ]
+            }
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "qualifiers and pointers": {
+            "type": "string"
+        },
+        "array": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

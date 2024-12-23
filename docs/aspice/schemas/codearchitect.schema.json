@@ -1,0 +1,164 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://json-schema.org/draft-07/schema#",
+    "title": "Core schema meta-schema",
+    "definitions": {
+        "schemaArray": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "#"
+            }
+        },
+        "nonNegativeInteger": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "nonNegativeIntegerDefault0": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/nonNegativeInteger"
+                },
+                {
+                    "default": 0
+                }
+            ]
+        },
+        "simpleTypes": {
+            "enum": [
+                "array",
+                "boolean",
+                "integer",
+                "null",
+                "number",
+                "object",
+                "string"
+            ]
+        },
+        "stringArray": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true,
+            "default": []
+        }
+    },
+    "type": [
+        "object",
+        "boolean"
+    ],
+    "properties": {
+        "$id": {
+            "type": "string",
+            "format": "uri-reference"
+        },
+        "$model": {
+            "type": "string",
+            "format": "uri"
+        },
+        "$ref": {
+            "type": "string",
+            "format": "uri-reference"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "multiline": {
+            "type": "boolean"
+        },
+        "markdown": {
+            "type": "boolean"
+        },
+        "file": {
+            "type": "string"
+        },
+        "items": {
+            "anyOf": [
+                {
+                    "$ref": "#"
+                },
+                {
+                    "$ref": "#/definitions/schemaArray"
+                }
+            ],
+            "default": true
+        },
+        "required": {
+            "$ref": "#/definitions/stringArray"
+        },
+        "properties": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#"
+            },
+            "default": {}
+        },
+        "const": true,
+        "enum": {
+            "type": "array",
+            "items": true
+        },
+        "type": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/simpleTypes"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/simpleTypes"
+                    }
+                }
+            ]
+        },
+        "root": {
+            "type": "boolean"
+        },
+        "editable": {
+            "type": "boolean"
+        },
+        "hidden": {
+            "type": "boolean"
+        },
+        "icon": {
+            "type": "string"
+        },
+        "commands": {
+            "type": "array",
+            "items": {
+                "properties": {
+                    "title": {
+                        "type": "array"
+                    },
+                    "steps": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "tool": {
+                                    "type": "string",
+                                    "enum": [
+                                        "vscode",
+                                        "shell",
+                                        "python"
+                                    ]
+                                },
+                                "args": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "default": true
+    }
+}

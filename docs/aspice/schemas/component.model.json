@@ -1,7 +1,7 @@
 {
     "$schema": "./codearchitect.schema.json",
     "type": "object",
-    "title": "Qualification Test",
+    "title": "Component",
     "properties": {
         "id": {
             "type": "string",
@@ -18,39 +18,19 @@
                 "type": "string"
             },
             "const": [
-                "qualificationtest"
+                "component"
             ]
         },
-        "precondition": {
+        "icon": {
             "hidden": true,
-            "editable": true,
-            "multiline": true,
-            "type": "string"
-        },
-        "steps": {
-            "hidden": true,
-            "editable": true,
-            "multiline": true,
-            "type": "string"
-        },
-        "expected result": {
-            "hidden": true,
-            "editable": true,
-            "multiline": true,
-            "type": "string"
-        },
-        "actual result": {
-            "hidden": true,
-            "editable": true,
-            "multiline": true,
-            "type": "string"
-        },
-        "status": {
             "type": "string",
-            "enum": [
-                "passed",
-                "failed"
-            ]
+            "const": "package"
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
         },
         "requirements": {
             "type": "array",
@@ -70,10 +50,27 @@
                 }
             }
         },
-        "icon": {
+        "ports": {
+            "type": "array",
             "hidden": true,
-            "type": "string",
-            "const": "robot"
+            "items": {
+                "$ref": "./port.model.json"
+            }
+        },
+        "Components": {
+            "type": "array",
+            "items": {
+                "$ref": "./component.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
         }
     }
 }

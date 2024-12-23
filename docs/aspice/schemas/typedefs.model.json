@@ -1,0 +1,46 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Typedefs",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "type",
+                "typedefs"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "symbol-parameter"
+        },
+        "type": {
+            "hidden": true,
+            "editable": true,
+            "type": "string",
+            "search": {
+                "query": [
+                    [
+                        {
+                            "field": "tags",
+                            "regex": "type"
+                        }
+                    ]
+                ]
+            }
+        }
+    }
+}

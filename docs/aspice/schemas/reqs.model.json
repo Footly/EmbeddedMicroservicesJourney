@@ -1,5 +1,5 @@
 {
-  "$schema": "file:///C:/Users/narcis.oriol/Documents/codearchitect/codearchitect_3/resources/codearchitect.schema.json",
+  "$schema": "./codearchitect.schema.json",
   "type": "object",
   "title": "Requirement",
   "properties": {
@@ -27,12 +27,37 @@
       "multiline": true,
       "type": "string"
     },
+    "impact": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "release": {
+      "type": "string"
+    },
+    "isApproved": {
+      "type": "boolean"
+    },
+    "acceptanceCriteria": {
+      "type": "string"
+    },
+    "type": {
+      "type": "array",
+      "enum": [
+        "functional",
+        "safety",
+        "security",
+        "metrics"
+      ]
+    },
     "icon": {
       "hidden": true,
       "type": "string",
       "const": "book"
     }
   },
-  "view": [
-  ]
+  "view": []
 }

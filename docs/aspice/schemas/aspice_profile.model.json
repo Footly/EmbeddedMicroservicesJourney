@@ -1,5 +1,5 @@
 {
-  "$schema": "file:///C:/Users/narci/Documents/codearchitect/codearchitect_3/resources/codearchitect.schema.json",
+  "$schema": "./codearchitect.schema.json",
   "$id": "aspice_profile.model.json",
   "title": "Project",
   "type": "object",
@@ -53,6 +53,66 @@
       },
       "autoincrement": {
         "prefix": "REQ-"
+      },
+      "editable": false
+    },
+    "SWE2-SoftwareArchitecturalDesign": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "hidden": true,
+          "editable": false,
+          "type": "string",
+          "const": "folder"
+        },
+        "Components": {
+          "type": "array",
+          "items": {
+            "$ref": "./component.model.json"
+          },
+          "properties": {
+            "icon": {
+              "hidden": true,
+              "editable": false,
+              "type": "string",
+              "const": "folder"
+            }
+          },
+          "editable": false
+        },
+        "Interfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "./interface.model.json"
+          },
+          "properties": {
+            "icon": {
+              "hidden": true,
+              "editable": false,
+              "type": "string",
+              "const": "folder"
+            }
+          },
+          "editable": false
+        }
+      },
+      "editable": false
+    },
+    "SWE5-IntegrationTests": {
+      "type": "array",
+      "items": {
+        "$ref": "./integrationtest.model.json"
+      },
+      "properties": {
+        "icon": {
+          "hidden": true,
+          "editable": false,
+          "type": "string",
+          "const": "folder"
+        }
+      },
+      "autoincrement": {
+        "prefix": "ITEST-"
       },
       "editable": false
     },

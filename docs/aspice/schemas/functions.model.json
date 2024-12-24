@@ -1,0 +1,75 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Function",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "visibility": {
+            "$ref": "./visibility.model.json",
+            "hidden": true,
+            "editable": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "function"
+            ]
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "symbol-property"
+        },
+        "returntype": {
+            "hidden": true,
+            "editable": true,
+            "type": "object",
+            "properties": {
+                "datatype": {
+                    "hidden": true,
+                    "editable": true,
+                    "type": "string",
+                    "search": {
+                        "query": [
+                            [
+                                {
+                                    "field": "tags",
+                                    "regex": "type"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                "qualifiers and pointers": {
+                    "type": "string",
+                    "hidden": true,
+                    "editable": true
+                }
+            }
+        },
+        "parameters": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "$ref": "./parameter.model.json"
+            }
+        },
+        "documentation": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        }
+    }
+}

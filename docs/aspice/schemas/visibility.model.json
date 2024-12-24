@@ -1,0 +1,9 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "string",
+    "enum": [
+        "public",
+        "private"
+    ],
+    "default": "public"
+}

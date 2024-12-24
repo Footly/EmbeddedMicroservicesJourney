@@ -98,7 +98,52 @@
       },
       "editable": false
     },
-    "SWE5-IntegrationTests": {
+    "SWE3-SoftwareDetailedDesign": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "hidden": true,
+          "editable": false,
+          "type": "string",
+          "const": "folder"
+        },
+        "Software Units": {
+          "type": "array",
+          "items": {
+            "$ref": "./softwareunit.model.json"
+          },
+          "properties": {
+            "icon": {
+              "hidden": true,
+              "editable": false,
+              "type": "string",
+              "const": "folder"
+            }
+          },
+          "editable": false
+        }
+      },
+      "editable": false
+    },
+    "SWE4-SoftwareUnitTest": {
+      "type": "array",
+      "items": {
+        "$ref": "./unittest.model.json"
+      },
+      "properties": {
+        "icon": {
+          "hidden": true,
+          "editable": false,
+          "type": "string",
+          "const": "folder"
+        }
+      },
+      "autoincrement": {
+        "prefix": "UTEST-"
+      },
+      "editable": false
+    },
+    "SWE5-SoftwareIntegrationTest": {
       "type": "array",
       "items": {
         "$ref": "./integrationtest.model.json"
@@ -116,7 +161,7 @@
       },
       "editable": false
     },
-    "SWE6-QualificationTests": {
+    "SWE6-SoftwareQualificationTest": {
       "type": "array",
       "items": {
         "$ref": "./qualificationtest.model.json"

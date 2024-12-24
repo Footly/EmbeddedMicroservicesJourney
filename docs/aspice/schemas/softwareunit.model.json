@@ -76,6 +76,96 @@
                 }
             },
             "editable": false
+        },
+        "typedefs": {
+            "type": "array",
+            "items": {
+                "$ref": "./typedefs.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        },
+        "callbacks": {
+            "type": "array",
+            "items": {
+                "$ref": "./callback.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        },
+        "structs/unions": {
+            "type": "array",
+            "items": {
+                "$ref": "./structunion.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        },
+        "enums": {
+            "type": "array",
+            "items": {
+                "$ref": "./enum.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        },
+        "functions": {
+            "type": "array",
+            "items": {
+                "$ref": "./function.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
+        },
+        "variables": {
+            "type": "array",
+            "items": {
+                "$ref": "./variable.model.json"
+            },
+            "properties": {
+                "icon": {
+                    "hidden": true,
+                    "editable": false,
+                    "type": "string",
+                    "const": "folder"
+                }
+            },
+            "editable": false
         }
     }
 }

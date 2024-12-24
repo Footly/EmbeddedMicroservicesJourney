@@ -1,7 +1,7 @@
 {
     "$schema": "./codearchitect.schema.json",
     "type": "object",
-    "title": "Struct/Union",
+    "title": "Enum",
     "properties": {
         "id": {
             "type": "string",
@@ -19,28 +19,24 @@
             },
             "const": [
                 "type",
-                "structunion"
+                "enumerator"
             ]
+        },
+        "visibility": {
+            "$ref": "./visibility.model.json",
+            "hidden": true,
+            "editable": true
         },
         "icon": {
             "hidden": true,
             "type": "string",
-            "const": "symbol-struct"
-        },
-        "type": {
-            "type": "string",
-            "enum": [
-                "struct",
-                "union"
-            ],
-            "hidden": true,
-            "editable": true
+            "const": "list-ordered"
         },
         "items": {
             "type": "array",
             "hidden": true,
             "items": {
-                "$ref": "./structunionmember.model.json"
+                "$ref": "./enummember.model.json"
             }
         },
         "description": {
@@ -48,11 +44,6 @@
             "editable": true,
             "multiline": true,
             "type": "string"
-        },
-        "visibility": {
-            "$ref": "./visibility.model.json",
-            "hidden": true,
-            "editable": true
         }
     }
 }

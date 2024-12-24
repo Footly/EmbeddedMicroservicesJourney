@@ -1,7 +1,7 @@
 {
     "$schema": "./codearchitect.schema.json",
     "type": "object",
-    "title": "Struct/Union DataMember",
+    "title": "Parameter",
     "properties": {
         "id": {
             "type": "string",
@@ -11,6 +11,11 @@
             "type": "string",
             "hidden": true
         },
+        "visibility": {
+            "$ref": "./visibility.model.json",
+            "hidden": true,
+            "editable": true
+        },
         "tags": {
             "hidden": true,
             "type": "array",
@@ -18,17 +23,17 @@
                 "type": "string"
             },
             "const": [
-                "structunionmember"
+                "parameter"
             ]
         },
         "icon": {
             "hidden": true,
             "type": "string",
-            "const": "symbol-field"
+            "const": "symbol-parameter"
         },
-        "type": {
-            "hidden": true,
+        "datatype": {
             "editable": true,
+            "hidden": true,
             "type": "string",
             "search": {
                 "query": [
@@ -41,11 +46,24 @@
                 ]
             }
         },
-        "description": {
+        "Array": {
             "hidden": true,
+            "type": "array",
             "editable": true,
-            "multiline": true,
-            "type": "string"
+            "items": {
+                "type": "string",
+                "search": {
+                    "query": [
+                        [
+                            {
+                                "field": "tags",
+                                "regex": "enummember"
+                            }
+                        ]
+                    ],
+                    "text": true
+                }
+            }
         },
         "qualifiers and pointers": {
             "type": "string",

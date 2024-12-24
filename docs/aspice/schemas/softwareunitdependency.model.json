@@ -18,7 +18,7 @@
                 "type": "string"
             },
             "const": [
-                "swunitdependency"
+                "dependencysoftwareunit"
             ]
         },
         "icon": {
@@ -31,7 +31,9 @@
             "enum": [
                 "public",
                 "private"
-            ]
+            ],
+            "hidden": true,
+            "editable": true
         },
         "dependency": {
             "type": "string",

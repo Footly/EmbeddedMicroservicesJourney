@@ -1,0 +1,81 @@
+{
+    "$schema": "./codearchitect.schema.json",
+    "type": "object",
+    "title": "Unit Test",
+    "properties": {
+        "id": {
+            "type": "string",
+            "hidden": true
+        },
+        "label": {
+            "type": "string",
+            "hidden": true
+        },
+        "tags": {
+            "hidden": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "const": [
+                "unittest"
+            ]
+        },
+        "precondition": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "steps": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "expected result": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "actual result": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
+        },
+        "status": {
+            "type": "string",
+            "hidden": true,
+            "editable": true,
+            "enum": [
+                "✅ passed ༼ つ ◕_◕ ༽つ",
+                "❌ failed (⊙_⊙;)"
+            ]
+        },
+        "swunits": {
+            "type": "array",
+            "hidden": true,
+            "editable": true,
+            "items": {
+                "type": "string",
+                "search": {
+                    "query": [
+                        [
+                            {
+                                "field": "tags",
+                                "regex": "swunit"
+                            }
+                        ]
+                    ]
+                }
+            }
+        },
+        "icon": {
+            "hidden": true,
+            "type": "string",
+            "const": "test-view-icon"
+        }
+    }
+}

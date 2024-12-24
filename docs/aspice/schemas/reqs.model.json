@@ -33,31 +33,40 @@
         "low",
         "medium",
         "high"
-      ]
+      ],
+      "hidden": true,
+      "editable": true,
     },
     "release": {
-      "type": "string"
+      "type": "string",
+      "hidden": true,
+      "editable": true,
     },
     "isApproved": {
-      "type": "boolean"
+      "type": "boolean",
+      "hidden": true,
+      "editable": true,
     },
     "acceptanceCriteria": {
-      "type": "string"
+      "type": "string",
+      "hidden": true,
+      "editable": true,
     },
     "type": {
-      "type": "array",
+      "type": "string",
       "enum": [
         "functional",
         "safety",
         "security",
         "metrics"
-      ]
+      ],
+      "hidden": true,
+      "editable": true
     },
     "icon": {
       "hidden": true,
       "type": "string",
       "const": "book"
     }
-  },
-  "view": []
+  }
 }

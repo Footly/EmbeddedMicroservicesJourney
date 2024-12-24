@@ -22,6 +22,11 @@
                 "typedefs"
             ]
         },
+        "visibility": {
+            "$ref": "./visibility.model.json",
+            "hidden": true,
+            "editable": true
+        },
         "icon": {
             "hidden": true,
             "type": "string",

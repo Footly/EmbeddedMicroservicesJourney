@@ -1,7 +1,7 @@
 {
     "$schema": "./codearchitect.schema.json",
     "type": "object",
-    "title": "Struct/Union",
+    "title": "Struct/Union DataMember",
     "properties": {
         "id": {
             "type": "string",
@@ -18,41 +18,24 @@
                 "type": "string"
             },
             "const": [
-                "type",
-                "structunion"
+                "enummember"
             ]
         },
         "icon": {
             "hidden": true,
             "type": "string",
-            "const": "symbol-struct"
+            "const": "symbol-number"
         },
-        "type": {
+        "value": {
             "type": "string",
-            "enum": [
-                "struct",
-                "union"
-            ],
             "hidden": true,
             "editable": true
-        },
-        "items": {
-            "type": "array",
-            "hidden": true,
-            "items": {
-                "$ref": "./structunionmember.model.json"
-            }
         },
         "description": {
             "hidden": true,
             "editable": true,
             "multiline": true,
             "type": "string"
-        },
-        "visibility": {
-            "$ref": "./visibility.model.json",
-            "hidden": true,
-            "editable": true
         }
     }
 }

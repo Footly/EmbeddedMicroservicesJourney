@@ -33,12 +33,19 @@
             "type": "string"
         },
         "isConfigurable": {
-            "type": "boolean"
+            "type": "boolean",
+            "hidden": true,
+            "editable": true
         },
         "implementation": {
             "hidden": true,
             "editable": true,
             "type": "string"
+        },
+        "visibility": {
+            "$ref": "./visibility.model.json",
+            "hidden": true,
+            "editable": true
         }
     }
 }

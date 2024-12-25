@@ -121,6 +121,21 @@
             }
           },
           "editable": false
+        },
+        "Primitive Types": {
+          "type": "array",
+          "items": {
+            "$ref": "./primitivetype.model.json"
+          },
+          "properties": {
+            "icon": {
+              "hidden": true,
+              "editable": false,
+              "type": "string",
+              "const": "folder"
+            }
+          },
+          "editable": false
         }
       },
       "editable": false

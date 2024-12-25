@@ -1,0 +1,627 @@
+{
+  "id": "177cdc8e-5aef-4921-9a74-0d7e8f9bfcd8",
+  "label": "LedTree",
+  "tags": [
+    "project"
+  ],
+  "icon": "symbol-method",
+  "$model": "aspice_profile.model.json",
+  "description": "Project consists on reproducing movies (formed by toggling of leds with different intervals) on a led's series.",
+  "SWE1-Requirements": [
+    {
+      "id": "af4e0991-e686-4027-8e52-6e23e202a171",
+      "label": "REQ-0",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Upto 20 leds must be controllable.",
+      "impact": "",
+      "release": "",
+      "isApproved": false,
+      "acceptanceCriteria": "",
+      "type": "",
+      "icon": "book"
+    },
+    {},
+    {
+      "id": "49837504-c1ae-4f41-ba17-4f3d278c40c5",
+      "label": "REQ-2",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Leds are RGB so R,G, and B components must be set.",
+      "impact": "",
+      "release": "",
+      "isApproved": false,
+      "acceptanceCriteria": "",
+      "type": "",
+      "icon": "book"
+    },
+    {
+      "id": "2d19528b-30fb-4516-b103-7ac593b8d86f",
+      "label": "REQ-3",
+      "tags": [
+        "reqs"
+      ],
+      "description": "Toggling timestamp accuracy is of 500 ms.",
+      "impact": "",
+      "release": "",
+      "isApproved": false,
+      "acceptanceCriteria": "",
+      "type": "",
+      "icon": "book"
+    }
+  ],
+  "SWE2-SoftwareArchitecturalDesign": {
+    "icon": "folder",
+    "Components": [
+      {
+        "id": "48ce3cfe-20d5-4413-89b2-b3aa3f1875d7",
+        "label": "LedController",
+        "tags": [
+          "component"
+        ],
+        "icon": "package",
+        "description": "This component manages all leds. Contains all the leds.",
+        "requirements": [
+          "${id:af4e0991-e686-4027-8e52-6e23e202a171}",
+          "${id:49837504-c1ae-4f41-ba17-4f3d278c40c5}"
+        ],
+        "ports": [
+          {
+            "id": "13603e15-f445-461e-8e5f-2a708c875815",
+            "label": "ledIn",
+            "tags": [
+              "port"
+            ],
+            "icon": "plug",
+            "description": "",
+            "direction": "in",
+            "interface": "${id:a266fd27-cff2-465f-95fe-34a2a20dadff}"
+          }
+        ],
+        "Components": [
+          {
+            "id": "13923d9b-2da5-412a-b431-2fc567e6c7be",
+            "label": "Led",
+            "tags": [
+              "component"
+            ],
+            "icon": "package",
+            "description": "Manages the single instance led",
+            "requirements": [],
+            "ports": [
+              {
+                "id": "0b9e1821-a698-4da7-986e-f5c4ac0f56d1",
+                "label": "ledIn",
+                "tags": [
+                  "port"
+                ],
+                "icon": "plug",
+                "description": "",
+                "direction": "",
+                "interface": "${id:a266fd27-cff2-465f-95fe-34a2a20dadff}"
+              }
+            ],
+            "Components": []
+          }
+        ]
+      },
+      {
+        "id": "2449623e-5b52-4981-a7d2-8e85946b5f92",
+        "label": "MovieController",
+        "tags": [
+          "component"
+        ],
+        "icon": "package",
+        "description": "This component manages different movies for the LEDs.",
+        "requirements": [
+          "${id:af4e0991-e686-4027-8e52-6e23e202a171}",
+          "${id:2d19528b-30fb-4516-b103-7ac593b8d86f}",
+          "${id:49837504-c1ae-4f41-ba17-4f3d278c40c5}"
+        ],
+        "ports": [
+          {
+            "id": "76990968-edfa-4782-b0d2-e0964592839d",
+            "label": "ledOut",
+            "tags": [
+              "port"
+            ],
+            "icon": "plug",
+            "description": "",
+            "direction": "out",
+            "interface": "${id:a266fd27-cff2-465f-95fe-34a2a20dadff}"
+          }
+        ],
+        "Components": []
+      }
+    ],
+    "Interfaces": [
+      {
+        "id": "a266fd27-cff2-465f-95fe-34a2a20dadff",
+        "label": "iLedColor",
+        "tags": [
+          "interface"
+        ],
+        "icon": "symbol-interface",
+        "description": "Interface for each of the LED's. Consists on the RGB components."
+      },
+      {
+        "id": "8f440103-d3aa-4646-ab8a-967d27feccea",
+        "label": "iLedBrightness",
+        "tags": [
+          "interface"
+        ],
+        "icon": "symbol-interface",
+        "description": ""
+      }
+    ]
+  },
+  "SWE3-SoftwareDetailedDesign": {
+    "icon": "folder",
+    "Software Units": [
+      {
+        "id": "3d4809e6-4fc9-47e3-8fde-aed31dc849bf",
+        "label": "LedModule",
+        "tags": [
+          "swunit"
+        ],
+        "icon": "squirrel",
+        "description": "",
+        "component": "${id:48ce3cfe-20d5-4413-89b2-b3aa3f1875d7}",
+        "dependencies": [
+          {
+            "id": "34e3191a-ab56-40d2-bf2b-05ad719ee77a",
+            "label": "stdint",
+            "tags": [
+              "dependencysoftwareunit"
+            ],
+            "icon": "color-mode",
+            "visibility": "public",
+            "dependency": "${id:640283bc-f3c3-406e-9d82-bc3ea76472d9}"
+          },
+          {
+            "id": "e99adf25-38a2-494a-ad2c-fb5556380e9b",
+            "label": "string",
+            "tags": [
+              "dependencysoftwareunit"
+            ],
+            "icon": "color-mode",
+            "visibility": "public",
+            "dependency": "${id:a44516d8-9a93-418d-8b38-daf34db7800d}"
+          }
+        ],
+        "macros": [
+          {},
+          {
+            "id": "76642dfd-4b95-4de9-b20d-a20c8aa3a1f6",
+            "label": "NUM_LEDS",
+            "tags": [
+              "macro"
+            ],
+            "icon": "text-size",
+            "description": "Max number of leds each tree instance",
+            "isConfigurable": true,
+            "implementation": "20",
+            "visibility": "public"
+          },
+          {
+            "id": "0242fb97-f19b-4384-8083-3dfc27044416",
+            "label": "PRIVATE_LEDS",
+            "tags": [
+              "macro"
+            ],
+            "icon": "text-size",
+            "description": "",
+            "isConfigurable": false,
+            "implementation": "",
+            "visibility": "private"
+          },
+          {
+            "id": "84ccf69a-26f4-49af-ad59-e7b843ed14b3",
+            "label": "TEST",
+            "tags": [
+              "macro"
+            ],
+            "icon": "text-size",
+            "description": "",
+            "isConfigurable": false,
+            "visibility": "public",
+            "implementation": ""
+          }
+        ],
+        "typedefs": [
+          {
+            "id": "c06e0983-83af-488a-a8b3-961dc7e42412",
+            "label": "aniol",
+            "tags": [
+              "type",
+              "typedefs"
+            ],
+            "visibility": "public",
+            "icon": "symbol-parameter",
+            "type": "${id:b339a6d5-ad96-46dd-ab38-12f5ce6ad96f}"
+          }
+        ],
+        "callbacks": [
+          {
+            "id": "49bce455-e62f-4336-8d0e-d47447c0be16",
+            "label": "narcisPointer",
+            "visibility": "public",
+            "tags": [
+              "type",
+              "callback"
+            ],
+            "icon": "indent",
+            "returntype": {
+              "datatype": "${id:c06e0983-83af-488a-a8b3-961dc7e42412}",
+              "qualifiers": ""
+            },
+            "parameters": [
+              {
+                "id": "d79d3c8a-afa0-4ef4-97fb-eee1a6a838e1",
+                "label": "caca",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:1773facc-f659-4819-bee7-18d04abe9d82}",
+                "qualifiers": "* const",
+                "array": [
+                  "NUM_LEDS",
+                  "5"
+                ],
+                "description": "parameter1"
+              },
+              {
+                "id": "b4b7af37-9422-42e8-a752-70a664fccf99",
+                "label": "ola",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:b339a6d5-ad96-46dd-ab38-12f5ce6ad96f}",
+                "qualifiers": "",
+                "array": [],
+                "description": "parameter2"
+              }
+            ],
+            "description": "Function callback to reutnr aniol"
+          }
+        ],
+        "structures": [
+          {
+            "id": "4dc151b0-9184-406f-8f88-287691f4d7a0",
+            "label": "led",
+            "tags": [
+              "type",
+              "structunion"
+            ],
+            "icon": "symbol-struct",
+            "type": "struct",
+            "members": [
+              {
+                "id": "122069ed-0218-44c8-af08-a249b24c6d33",
+                "label": "status",
+                "tags": [
+                  "structunionmember"
+                ],
+                "icon": "symbol-field",
+                "type": "${id:911d8c45-a579-4303-932c-fe038f56e97a}",
+                "description": "",
+                "qualifiers": "",
+                "array": []
+              }
+            ],
+            "description": "Manages the data rekated to the Led",
+            "visibility": "public"
+          },
+          {
+            "id": "1773facc-f659-4819-bee7-18d04abe9d82",
+            "label": "ledTree",
+            "tags": [
+              "type",
+              "structunion"
+            ],
+            "icon": "symbol-struct",
+            "type": "struct",
+            "members": [
+              {
+                "id": "ae7f73b5-9760-4b8f-a157-66a5b04b69b6",
+                "label": "leds",
+                "tags": [
+                  "structunionmember"
+                ],
+                "icon": "symbol-field",
+                "type": "${id:4dc151b0-9184-406f-8f88-287691f4d7a0}",
+                "description": "20 leds contained in the led tree",
+                "qualifiers": "",
+                "array": [
+                  "20"
+                ]
+              }
+            ],
+            "description": "Managed data related to the Tree Led. Contains leds.",
+            "visibility": "public"
+          }
+        ],
+        "enums": [
+          {
+            "id": "911d8c45-a579-4303-932c-fe038f56e97a",
+            "label": "ledStatus",
+            "tags": [
+              "type",
+              "enumerator"
+            ],
+            "visibility": "public",
+            "icon": "list-ordered",
+            "enumerators": [
+              {
+                "id": "16171e42-af7f-4c65-88a4-24d53f8c137a",
+                "label": "LED_OK",
+                "tags": [
+                  "enummember"
+                ],
+                "icon": "symbol-number",
+                "value": "5",
+                "description": ""
+              },
+              {
+                "id": "f83e2632-4e52-46bc-95cc-f80b78ac8afe",
+                "label": "LED_NOT_OK",
+                "tags": [
+                  "enummember"
+                ],
+                "icon": "symbol-number",
+                "value": "",
+                "description": ""
+              }
+            ],
+            "description": "Manages the status Led states"
+          },
+          {}
+        ],
+        "functions": [
+          {
+            "id": "5bde565a-9123-44e4-82d1-7ccfe9ddea8d",
+            "label": "init",
+            "visibility": "public",
+            "tags": [
+              "function"
+            ],
+            "icon": "symbol-property",
+            "returntype": {
+              "datatype": "${id:4daca129-9d8b-4bfd-ac42-3b380e846424}",
+              "qualifiers": ""
+            },
+            "description": "Function returns a 0 if OK and a -1 if not OK.",
+            "parameters": [
+              {
+                "id": "d236d498-7c68-4a31-9d69-08767f4fc868",
+                "label": "me",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:1773facc-f659-4819-bee7-18d04abe9d82}",
+                "qualifiers": "* const",
+                "array": [],
+                "description": "instance"
+              }
+            ]
+          },
+          {
+            "id": "0d390d03-69cc-4ac2-8288-f5c037f3b3fe",
+            "label": "deinit",
+            "visibility": "public",
+            "tags": [
+              "function"
+            ],
+            "icon": "symbol-property",
+            "description": "Function returns a 0 if OK and a -1 if not OK.",
+            "parameters": [
+              {
+                "id": "6fa18498-a6db-49cf-9379-9514eb13b818",
+                "label": "me",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:1773facc-f659-4819-bee7-18d04abe9d82}",
+                "qualifiers": "*const",
+                "array": [],
+                "description": "instance"
+              }
+            ],
+            "returntype": {
+              "datatype": "${id:4daca129-9d8b-4bfd-ac42-3b380e846424}",
+              "qualifiers": ""
+            }
+          },
+          {
+            "id": "de562113-b621-464c-81c6-893534298613",
+            "label": "setLedOn",
+            "visibility": "public",
+            "tags": [
+              "function"
+            ],
+            "icon": "symbol-property",
+            "description": "Set the according led to ON of the tree by Index. 0 if Ok, -1 if not OK.",
+            "parameters": [
+              {
+                "id": "f8c51fee-3c41-40be-befa-10cbb9a2440f",
+                "label": "me",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:1773facc-f659-4819-bee7-18d04abe9d82}",
+                "qualifiers": "*const",
+                "array": [],
+                "description": "instance"
+              },
+              {
+                "id": "c761444c-6ab9-46bd-9e93-b5cf0dd1ac43",
+                "label": "led_index",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:4daca129-9d8b-4bfd-ac42-3b380e846424}",
+                "qualifiers": "const",
+                "array": [],
+                "description": "led index to change"
+              }
+            ],
+            "returntype": {
+              "datatype": "${id:4daca129-9d8b-4bfd-ac42-3b380e846424}",
+              "qualifiers": ""
+            }
+          },
+          {
+            "id": "505175e7-e256-4414-bbd6-14882a75f480",
+            "label": "setLedOff",
+            "visibility": "public",
+            "tags": [
+              "function"
+            ],
+            "icon": "symbol-property",
+            "description": "Set the according led to Off of the tree by Index. 0 if Ok, -1 if not OK.",
+            "parameters": [
+              {
+                "id": "8c213fb1-f1f7-4697-ac53-331e0a4886a9",
+                "label": "me",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:1773facc-f659-4819-bee7-18d04abe9d82}",
+                "qualifiers": "*const",
+                "array": [],
+                "description": "instance"
+              },
+              {
+                "id": "18806232-6337-4aee-88e7-b31fbbbae04c",
+                "label": "led_index",
+                "tags": [
+                  "parameter"
+                ],
+                "icon": "symbol-parameter",
+                "datatype": "${id:4daca129-9d8b-4bfd-ac42-3b380e846424}",
+                "qualifiers": "const",
+                "array": [],
+                "description": "led index to change"
+              }
+            ],
+            "returntype": {
+              "datatype": "${id:4daca129-9d8b-4bfd-ac42-3b380e846424}",
+              "qualifiers": ""
+            }
+          }
+        ],
+        "variables": [
+          {}
+        ]
+      },
+      {
+        "id": "640283bc-f3c3-406e-9d82-bc3ea76472d9",
+        "label": "stdint",
+        "tags": [
+          "swunit"
+        ],
+        "icon": "squirrel",
+        "description": "",
+        "component": "",
+        "dependencies": [],
+        "macros": [],
+        "typedefs": [],
+        "callbacks": [],
+        "structures": [],
+        "enums": [],
+        "functions": [
+          {},
+          {}
+        ],
+        "variables": []
+      },
+      {
+        "id": "a44516d8-9a93-418d-8b38-daf34db7800d",
+        "label": "string",
+        "tags": [
+          "swunit"
+        ],
+        "icon": "squirrel",
+        "description": "",
+        "component": "",
+        "dependencies": [],
+        "macros": [],
+        "typedefs": [],
+        "callbacks": [],
+        "structures": [],
+        "enums": [],
+        "functions": [],
+        "variables": []
+      },
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "Primitive Types": [
+      {
+        "id": "bac8f11a-ab67-4bc5-9fa2-4534848128f2",
+        "label": "char",
+        "tags": [
+          "type",
+          "primitivetype"
+        ],
+        "icon": "variable"
+      },
+      {
+        "id": "b339a6d5-ad96-46dd-ab38-12f5ce6ad96f",
+        "label": "float",
+        "tags": [
+          "type",
+          "primitivetype"
+        ],
+        "icon": "variable"
+      },
+      {
+        "id": "4daca129-9d8b-4bfd-ac42-3b380e846424",
+        "label": "int",
+        "tags": [
+          "type",
+          "primitivetype"
+        ],
+        "icon": "variable"
+      },
+      {
+        "id": "3bf86e88-b399-4587-99a2-f21fdabc8087",
+        "label": "short",
+        "tags": [
+          "type",
+          "primitivetype"
+        ],
+        "icon": "variable"
+      },
+      {
+        "id": "63edadc5-2b4b-4832-a6e3-072f336211d8",
+        "label": "void",
+        "tags": [
+          "type",
+          "primitivetype"
+        ],
+        "icon": "variable"
+      }
+    ]
+  },
+  "SWE4-SoftwareUnitTest": [
+    {}
+  ],
+  "SWE5-SoftwareIntegrationTest": [],
+  "SWE6-SoftwareQualificationTest": []
+}

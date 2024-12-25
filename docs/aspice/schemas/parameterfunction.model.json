@@ -1,7 +1,7 @@
 {
     "$schema": "./codearchitect.schema.json",
     "type": "object",
-    "title": "Struct/Union",
+    "title": "Parameter",
     "properties": {
         "id": {
             "type": "string",
@@ -18,47 +18,47 @@
                 "type": "string"
             },
             "const": [
-                "type",
-                "structunion"
+                "parameter"
             ]
         },
         "icon": {
             "hidden": true,
             "type": "string",
-            "const": "symbol-struct"
+            "const": "symbol-parameter"
         },
-        "type": {
+        "datatype": {
+            "editable": true,
+            "hidden": true,
             "type": "string",
-            "enum": [
-                "struct",
-                "union"
-            ],
-            "const": "struct",
+            "search": {
+                "query": [
+                    [
+                        {
+                            "field": "tags",
+                            "regex": "type"
+                        }
+                    ]
+                ]
+            }
+        },
+        "qualifiers": {
+            "type": "string",
             "hidden": true,
             "editable": true
         },
-        "members": {
+        "array": {
             "type": "array",
-            "hidden": true,
             "items": {
-                "$ref": "./structunionmember.model.json"
-            }
+                "type": "string"
+            },
+            "hidden": true,
+            "editable": true
         },
         "description": {
             "hidden": true,
             "editable": true,
             "multiline": true,
             "type": "string"
-        },
-        "visibility": {
-            "type": "string",
-            "enum": [
-                "public",
-                "private"
-            ],
-            "hidden": true,
-            "editable": true,
-            "const": "public"
         }
     }
 }

@@ -12,9 +12,14 @@
             "hidden": true
         },
         "visibility": {
-            "$ref": "./visibility.model.json",
+            "type": "string",
+            "enum": [
+                "public",
+                "private"
+            ],
             "hidden": true,
-            "editable": true
+            "editable": true,
+            "const": "public"
         },
         "tags": {
             "hidden": true,
@@ -30,6 +35,19 @@
             "hidden": true,
             "type": "string",
             "const": "symbol-property"
+        },
+        "parameters": {
+            "type": "array",
+            "hidden": true,
+            "items": {
+                "$ref": "./parameterfunction.model.json"
+            }
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
         },
         "returntype": {
             "hidden": true,
@@ -51,25 +69,12 @@
                         ]
                     }
                 },
-                "qualifiers and pointers": {
+                "qualifiers": {
                     "type": "string",
                     "hidden": true,
                     "editable": true
                 }
             }
-        },
-        "parameters": {
-            "hidden": true,
-            "type": "array",
-            "items": {
-                "$ref": "./parameter.model.json"
-            }
-        },
-        "documentation": {
-            "hidden": true,
-            "editable": true,
-            "multiline": true,
-            "type": "string"
         }
     }
 }

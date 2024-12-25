@@ -37,15 +37,21 @@
             "hidden": true,
             "editable": true
         },
+        
+        "visibility": {
+            "type": "string",
+            "enum": [
+                "public",
+                "private"
+            ],
+            "hidden": true,
+            "editable": true,
+            "const": "public"
+        },
         "implementation": {
             "hidden": true,
             "editable": true,
             "type": "string"
-        },
-        "visibility": {
-            "$ref": "./visibility.model.json",
-            "hidden": true,
-            "editable": true
         }
     }
 }

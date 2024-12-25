@@ -1,0 +1,15 @@
+@startuml
+component {{ item.label }} {
+    {% for comp in item.Components -%}
+    component {{ comp.label }}
+    {% endfor %}
+}
+
+{% for port in item.ports -%}
+    {% if port.direction == "in" -%}
+    {{ item.label }} --( {{ port.interface.label }}
+    {% else -%}
+    {{ item.label }} --() {{ port.interface.label }}
+    {% endif -%}
+{% endfor %}
+@enduml

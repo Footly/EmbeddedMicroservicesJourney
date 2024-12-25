@@ -23,16 +23,21 @@
             ]
         },
         "visibility": {
-            "$ref": "./visibility.model.json",
+            "type": "string",
+            "enum": [
+                "public",
+                "private"
+            ],
             "hidden": true,
-            "editable": true
+            "editable": true,
+            "const": "public"
         },
         "icon": {
             "hidden": true,
             "type": "string",
             "const": "list-ordered"
         },
-        "items": {
+        "enumerators": {
             "type": "array",
             "hidden": true,
             "items": {

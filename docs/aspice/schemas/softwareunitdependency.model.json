@@ -26,14 +26,15 @@
             "type": "string",
             "const": "color-mode"
         },
-        "type": {
+        "visibility": {
             "type": "string",
             "enum": [
                 "public",
                 "private"
             ],
             "hidden": true,
-            "editable": true
+            "editable": true,
+            "const": "public"
         },
         "dependency": {
             "type": "string",

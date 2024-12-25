@@ -35,22 +35,22 @@
         "high"
       ],
       "hidden": true,
-      "editable": true,
+      "editable": true
     },
     "release": {
       "type": "string",
       "hidden": true,
-      "editable": true,
+      "editable": true
     },
     "isApproved": {
       "type": "boolean",
       "hidden": true,
-      "editable": true,
+      "editable": true
     },
     "acceptanceCriteria": {
       "type": "string",
       "hidden": true,
-      "editable": true,
+      "editable": true
     },
     "type": {
       "type": "string",

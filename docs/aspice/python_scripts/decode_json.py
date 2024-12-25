@@ -226,3 +226,23 @@ class DecodeJson:
                         refs.append(parent_result[0])  # Append the parent list
 
         return refs
+        
+    # Add a method that subsitute all '${id:49837504-c1ae-4f41-ba17-4f3d278c40c5} in a json for its search_by_id object.
+    # Return a new json with the substitution. Pass the base json as a parameter.
+    def substitute_all_refs(self, data, rootData):
+        if isinstance(data, dict):
+            for key, value in data.items():
+                if isinstance(value, str) and re.match(r'^\${id:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}}$', value):
+                    [obj, _] = self.search_by_id(value[5:-1])
+                    data[key] = obj
+                else:
+                    self.substitute_all_refs(value, rootData)
+        elif isinstance(data, list):
+            for index, item in enumerate(data):
+                if isinstance(item, dict) or isinstance(item, list):
+                    self.substitute_all_refs(item, rootData)
+                elif isinstance(item, str) and re.match(r'^\${id:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}}$', item):
+                    [obj, _] = self.search_by_id(item[5:-1])
+                    data[index] = obj
+
+        return data

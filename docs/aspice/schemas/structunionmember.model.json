@@ -47,7 +47,7 @@
             "multiline": true,
             "type": "string"
         },
-        "qualifiers and pointers": {
+        "qualifiers": {
             "type": "string",
             "hidden": true,
             "editable": true

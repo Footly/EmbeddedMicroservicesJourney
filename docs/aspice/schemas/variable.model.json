@@ -27,9 +27,14 @@
             "const": "symbol-variable"
         },
         "visibility": {
-            "$ref": "./visibility.model.json",
+            "type": "string",
+            "enum": [
+                "public",
+                "private"
+            ],
             "hidden": true,
-            "editable": true
+            "editable": true,
+            "const": "public"
         },
         "type": {
             "hidden": true,
@@ -52,7 +57,7 @@
             "multiline": true,
             "type": "string"
         },
-        "qualifiers and pointers": {
+        "qualifiers": {
             "type": "string",
             "hidden": true,
             "editable": true

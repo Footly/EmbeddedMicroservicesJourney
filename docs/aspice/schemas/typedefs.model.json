@@ -23,9 +23,14 @@
             ]
         },
         "visibility": {
-            "$ref": "./visibility.model.json",
+            "type": "string",
+            "enum": [
+                "public",
+                "private"
+            ],
             "hidden": true,
-            "editable": true
+            "editable": true,
+            "const": "public"
         },
         "icon": {
             "hidden": true,

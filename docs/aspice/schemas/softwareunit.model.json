@@ -107,7 +107,7 @@
             },
             "editable": false
         },
-        "structs/unions": {
+        "structures": {
             "type": "array",
             "items": {
                 "$ref": "./structunion.model.json"

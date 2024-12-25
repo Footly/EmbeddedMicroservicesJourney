@@ -11,11 +11,6 @@
             "type": "string",
             "hidden": true
         },
-        "visibility": {
-            "$ref": "./visibility.model.json",
-            "hidden": true,
-            "editable": true
-        },
         "tags": {
             "hidden": true,
             "type": "array",
@@ -46,26 +41,7 @@
                 ]
             }
         },
-        "Array": {
-            "hidden": true,
-            "type": "array",
-            "editable": true,
-            "items": {
-                "type": "string",
-                "search": {
-                    "query": [
-                        [
-                            {
-                                "field": "tags",
-                                "regex": "enummember"
-                            }
-                        ]
-                    ],
-                    "text": true
-                }
-            }
-        },
-        "qualifiers and pointers": {
+        "qualifiers": {
             "type": "string",
             "hidden": true,
             "editable": true
@@ -77,6 +53,12 @@
             },
             "hidden": true,
             "editable": true
+        },
+        "description": {
+            "hidden": true,
+            "editable": true,
+            "multiline": true,
+            "type": "string"
         }
     }
 }

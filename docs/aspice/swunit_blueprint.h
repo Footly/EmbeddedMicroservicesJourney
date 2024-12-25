@@ -5,7 +5,7 @@
 // 1. Header includes
 {% for include in item.dependencies -%}
 {% if include.visibility == "public" -%}
-#include "{{ include.label }}.h"
+#include "{{ include.dependency.label }}.h"
 {% endif -%}
 {% endfor %}
 
